@@ -97,7 +97,7 @@ end
 
 % function f
 function [val] = func_f(Sigma_inn, Y, A, m, tau)
-    value= 0;
+    val = 0;
     for i = 1:m
         val = val + 1 / 2 * (Y(i) - A(:, i)' * Sigma_inn * A(:, i)) ^ 2;
     end
