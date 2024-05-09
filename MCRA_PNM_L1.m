@@ -40,7 +40,11 @@ function [Sigma, values, para] = MCRA_PNM_L1(Sigma, para)
         % STEP 2: Obtain ${Sigma}^{(l)}$
         valuespre = values;
         Sigmapre = Sigma;
-        [Sigma, values, para] = ProxNewton(Sigma, Lambda, iter_out, para);
+        if (iter_out == 1)
+            [Sigma, values, para] = ProxGrad(Sigma, Lambda, iter_out, para);
+        else
+            [Sigma, values, para] = ProxNewton(Sigma, Lambda, iter_out, para);
+        end
 
         if (values > valuespre)
             Sigma = Sigmapre;
