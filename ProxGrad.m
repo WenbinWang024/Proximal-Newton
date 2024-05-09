@@ -62,7 +62,7 @@ function [Sigma, values, para] = ProxGrad(Sigma, Lambda, iter_out, para)
             Sigma_inn_old_inv = pinv(Sigma_inn_old);
             
             % Compute the gradient of f_1
-            S = Gradient_f_1(Sigma_inn_old);
+            S = Gradient_f_1(Sigma_inn_old, para);
 
             % Compute the gradient of f
             g = S - tau * Sigma_inn_old_inv;
