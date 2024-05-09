@@ -48,7 +48,7 @@ for idx_list = 1:13
             % 进行交叉验证
             for fold = 1:folds
                 % 划分训练集和数据集
-                validationIndices = (m / folds) * (i - 1) + 1 : (m / folds) * i;
+                validationIndices = (m / folds) * (fold - 1) + 1 : (m / folds) * fold;
                 trainingIndices = setdiff(1:m, validationIndices);
                 yTrain = Y(trainingIndices);
                 aTrain = A(:, trainingIndices);
