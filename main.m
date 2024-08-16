@@ -37,7 +37,7 @@ for idx_list = 1:4
     
     Y = [];
     for i = 1:m
-        Y = [Y; A(:, i)' * Sigma_sample * A(:, i) + error_para * (2 * rand() - 1)];
+        Y = [Y; A(:, i)' * Sigma_sample * A(:, i) + error_para * randn()];
     end
     % + error_para * (2 * rand() - 1)
     
